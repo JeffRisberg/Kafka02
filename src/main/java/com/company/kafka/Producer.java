@@ -1,4 +1,4 @@
-package com.company.kafka02;
+package com.company.kafka;
 
 /**
  * @author Jeff Risberg
