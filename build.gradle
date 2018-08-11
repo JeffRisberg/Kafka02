@@ -1,32 +1,34 @@
-group 'Kafka02'
+/**
+ *
+ */
+repositories {
+    mavenCentral()
+}
 
 buildscript {
     repositories {
-        mavenCentral()
-    }
-    dependencies {
+        jcenter()
     }
 }
 
 apply plugin: 'java'
 
-jar {
-    baseName = 'demo'
-    version = '0.0.1-SNAPSHOT'
-}
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+version = '0.1.0'
 
-repositories {
-    mavenCentral()
+ext {
+    slf4jVersion = '1.7.25'
+    junitVersion = '4.12'
 }
 
 dependencies {
-    compile group: 'org.apache.kafka', name: 'kafka-clients', version: '1.1.0'
-    compile 'org.slf4j:slf4j-log4j12:1.7.7'
-    testCompile 'junit:junit:4.11'
-}
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    runtime "org.slf4j:slf4j-simple:$slf4jVersion"
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.8'
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+
+    compile group: 'org.apache.kafka', name: 'kafka-clients', version: '1.1.0'
+
+    compile group: 'com.netflix.archaius', name: 'archaius-core', version: '0.7.6'
+
+    testCompile "junit:junit:$junitVersion"
 }
