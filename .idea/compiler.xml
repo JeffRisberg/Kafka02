@@ -7,6 +7,8 @@
     <bytecodeTargetLevel>
       <module name="com.company.Kafka02_main" target="1.8" />
       <module name="com.company.Kafka02_test" target="1.8" />
+      <module name="Kafka02_main" target="1.8" />
+      <module name="Kafka02_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
