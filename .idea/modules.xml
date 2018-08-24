@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kafka02.iml" filepath="$PROJECT_DIR$/.idea/modules/Kafka02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kafka02.iml" filepath="$PROJECT_DIR$/Kafka02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kafka02_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Kafka02_main.iml" group="Kafka02" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kafka02_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Kafka02_test.iml" group="Kafka02" />
     </modules>
   </component>
 </project>
