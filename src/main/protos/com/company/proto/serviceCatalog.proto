@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package protobuf;
+
+option java_package = "com.company.serviceCatalog";
+option java_outer_classname = "ServiceCatalog";
+
+message Catalog {
+  string sys_id = 1;
+  string name = 2;
+  string title = 3;
+  string description = 4;
+  bool has_items = 5;
+}
+
+message Category {
+  string sys_id = 1;
+  string title = 2;
+  string icon = 3;
+  string description = 4;
+}
+
+message Item {
+  string sys_id = 1;
+  string url = 2;
+  string name = 3;
+  string icon = 4;
+  string type = 5;
+  string content_type = 6;
+  string short_description = 7;
+  string description = 8;
+  string sys_class_name = 9;
+  repeated Variable variables = 10;
+}
+
+message Variable {
+  string sys_id = 1;
+  string name = 2;
+  string type = 3;
+  string label = 4;
+  bool render_label = 5;
+  bool mandatory = 6;
+  string value = 7;
+  string friendly_type = 8;
+  string display_type = 9;
+}

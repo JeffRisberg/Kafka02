@@ -1,6 +1,5 @@
-package com.company.kafka;
+package com.company;
 
-import com.company.kafka.constants.IKafkaConstants;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
