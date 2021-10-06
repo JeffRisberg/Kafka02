@@ -1,27 +1,30 @@
 /**
  *
  */
-repositories {
-    mavenCentral()
-    gradlePluginPortal()
-    maven {
-        url "https://packages.confluent.io/maven/"
-    }
-}
 
 buildscript {
     repositories {
         jcenter()
+        gradlePluginPortal()
+        maven {
+            url "https://packages.confluent.io/maven/"
+        }
     }
 }
 
 plugins {
-    id "com.github.davidmc24.gradle.plugin.avro" version "1.2.1"
+    id "com.commercehub.gradle.plugin.avro" version "0.99.99"
 }
 
 apply plugin: 'java'
 
 version = '0.1.0'
+
+
+avro {
+    stringType = "CharSequence"
+    fieldVisibility = "private"
+}
 
 ext {
     slf4jVersion = '1.7.30'
