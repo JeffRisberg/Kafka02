@@ -38,6 +38,17 @@ ext {
     junitVersion = '4.12'
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', "${buildDir}/generated-main-avro-java"]
+        }
+    }
+    generated {
+        java.srcDirs = ["${buildDir}/generated-main-avro-java"]
+    }
+}
+
 dependencies {
     compile "org.slf4j:slf4j-api:$slf4jVersion"
     runtime "org.slf4j:slf4j-simple:$slf4jVersion"
