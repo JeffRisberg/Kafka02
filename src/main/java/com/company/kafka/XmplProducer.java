@@ -9,6 +9,8 @@ public class XmplProducer {
 
   public static void main(String[] args) throws Exception {
 
+    com.kakfainaction.Alert x = new com.kakfainaction.Alert();
+
     String topicName = "users.registrations";
 
     Producer<Long, String> producer = createProducer();

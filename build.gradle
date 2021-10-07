@@ -4,16 +4,21 @@
 
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
         gradlePluginPortal()
-        maven {
-            url "https://packages.confluent.io/maven/"
-        }
     }
 }
 
 plugins {
     id "com.commercehub.gradle.plugin.avro" version "0.99.99"
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://packages.confluent.io/maven/"
+    }
 }
 
 apply plugin: 'java'
