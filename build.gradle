@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-    id "com.commercehub.gradle.plugin.avro" version "0.99.99"
+    id "com.github.davidmc24.gradle.plugin.avro" version "1.2.1"
 }
 
 repositories {
@@ -35,6 +35,8 @@ ext {
     slf4jVersion = '1.7.30'
     projectLombokVersion = '1.18.18'
     kafkaVersion = '2.8.0'
+    avroVersion = '1.8.2'
+    avroSerializerVersion = '3.3.1'
     junitVersion = '4.12'
 }
 
@@ -56,8 +58,8 @@ dependencies {
     compile 'com.github.davidmc24.gradle.plugin:gradle-avro-plugin:1.2.1'
 
     compile "org.apache.kafka:kafka-clients:$kafkaVersion"
-    compile 'org.apache.avro:avro:1.8.2'
-    compile 'io.confluent:kafka-avro-serializer:3.3.1'
+    compile "org.apache.avro:avro:$avroVersion"
+    compile "io.confluent:kafka-avro-serializer:$avroSerializerVersion"
 
     testCompile "junit:junit:$junitVersion"
 }
