@@ -2,6 +2,7 @@
  "type": "record",
  "name": "Alert",
  "fields": [
+     {"name":"title", "type": "string"},
      {"name":"status", "type": "string"}
  ]
 }

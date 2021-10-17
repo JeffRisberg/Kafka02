@@ -1,6 +1,7 @@
 package com.company.kafka;
 
 import com.company.kafka.constants.IKafkaConstants;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -9,11 +10,12 @@ import org.apache.kafka.common.serialization.LongSerializer;
 
 import java.util.Properties;
 
+@Slf4j
 public class XmplProducer {
 
   public static void main(String[] args) throws Exception {
 
-    String topicName = "users.registrations";
+    String topicName = "kafka02-alerts";
 
     Properties props = new Properties();
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, IKafkaConstants.KAFKA_BROKERS);
@@ -29,11 +31,12 @@ public class XmplProducer {
 
     for (int i = 0; i < 10; i++) {
       com.kakfainaction.Alert alert = new com.kakfainaction.Alert();
+      alert.setTitle("Alert number " + i);
       alert.setStatus("Pending");
 
       producer.send(new ProducerRecord<>(topicName, new Long(i), alert));
 
-      System.out.println("Message sent successfully");
+      log.info("Message sent successfully");
     }
 
     producer.close();
