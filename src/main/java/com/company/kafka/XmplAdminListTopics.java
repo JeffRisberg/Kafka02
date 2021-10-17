@@ -2,9 +2,12 @@ package com.company.kafka;
 
 import com.company.kafka.constants.IKafkaConstants;
 import java.util.Properties;
+
+import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.*;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 
+@Slf4j
 public class XmplAdminListTopics {
 
   public static void main(String[] args) throws Exception {
@@ -17,7 +20,7 @@ public class XmplAdminListTopics {
     ListTopicsResult ltr = kac.listTopics();
 
     for (TopicListing listing : ltr.listings().get()) {
-      System.out.println(listing.name());
+      log.info(listing.name());
     }
   }
 
