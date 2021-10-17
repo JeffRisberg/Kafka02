@@ -11,7 +11,9 @@ buildscript {
 }
 
 plugins {
+    id 'java'
     id "com.github.davidmc24.gradle.plugin.avro" version "1.2.1"
+    id 'io.freefair.lombok' version '5.3.3.3'
 }
 
 repositories {
@@ -25,9 +27,7 @@ apply plugin: 'java'
 
 version = '0.1.0'
 
-
 avro {
-    stringType = "CharSequence"
     fieldVisibility = "private"
 }
 
@@ -35,7 +35,7 @@ ext {
     slf4jVersion = '1.7.30'
     projectLombokVersion = '1.18.18'
     kafkaVersion = '2.8.0'
-    avroVersion = '1.8.2'
+    avroVersion = '1.10.2'
     avroSerializerVersion = '3.3.1'
     junitVersion = '4.12'
 }
@@ -43,11 +43,11 @@ ext {
 sourceSets {
     main {
         java {
-            srcDirs = ['src/main/java', "${buildDir}/generated-main-avro-java"]
+            //srcDirs = ['src/main/java', "${buildDir}/generated-main-avro-java"]
         }
     }
     generated {
-        java.srcDirs = ["${buildDir}/generated-main-avro-java"]
+        //java.srcDirs = ["${buildDir}/generated-main-avro-java"]
     }
 }
 
@@ -59,6 +59,7 @@ dependencies {
 
     compile "org.apache.kafka:kafka-clients:$kafkaVersion"
     compile "org.apache.avro:avro:$avroVersion"
+    compile "org.apache.avro:avro-ipc:$avroVersion"
     compile "io.confluent:kafka-avro-serializer:$avroSerializerVersion"
 
     testCompile "junit:junit:$junitVersion"
