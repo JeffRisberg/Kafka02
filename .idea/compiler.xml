@@ -12,9 +12,6 @@
         <module name="Kafka02.test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="Kafka02_main" target="1.8" />
-      <module name="Kafka02_test" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8" />
   </component>
 </project>
